@@ -3,7 +3,7 @@ pragma solidity >=0.8.0 <0.9.0;
 
 import "forge-std/Script.sol";
 import {console2} from "forge-std/Test.sol";
-
+import "src/TransferLogistics.sol";
 
 contract Deploy is Script {
 
@@ -37,9 +37,9 @@ contract Deploy is Script {
 
         vm.startBroadcast(deployerPrivateKey);
 
-        // Deploy AgaveTreasuryWithdrawer
-        // AgaveTreasuryWithdrawer withdrawer = new AgaveTreasuryWithdrawer();
-        // console2.log("Deployed Treasury Withdrawer: %s", address(withdrawer));
+        // Deploy TransferLogistics
+         TransferLogistics tl = new TransferLogistics();
+         console2.log("Deployed TransferLogistics: %s", address(tl));
 
         vm.stopBroadcast();
     }
